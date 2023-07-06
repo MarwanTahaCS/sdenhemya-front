@@ -14,7 +14,7 @@ export default function App(props) {
 
   function handleClick(language) {
     i18n.changeLanguage(language);
-    document.body.lang = language;
+    document.body.lang = "he";
     document.body.dir = i18n.dir();
   }
 
@@ -23,20 +23,21 @@ export default function App(props) {
   const [exists, setExists] = useState(false);
 
   useEffect(() => {
-    if (managerPhoneNumber !== "") {
-      Axios.get(localUrl + managerPhoneNumber)
-        .then((res) => {
-          let response = res.data;
-          setData(response);
-          if (response.length !== 0) {
-            setExists(true);
-          } else {
-            setExists(false);
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [managerPhoneNumber])
+    handleClick("he");
+    // if (managerPhoneNumber !== "") {
+    //   Axios.get(localUrl + managerPhoneNumber)
+    //     .then((res) => {
+    //       let response = res.data;
+    //       setData(response);
+    //       if (response.length !== 0) {
+    //         setExists(true);
+    //       } else {
+    //         setExists(false);
+    //       }
+    //     })
+    //     .catch((err) => console.log(err));
+    // }
+  }, [])
 
   // const localUrl = "http://localhost:3001/api/documentSign/";
   const localUrl = "http://sdenhemya.myvarno.io:3001/api/documentSign/";
@@ -220,7 +221,7 @@ export default function App(props) {
 
   return (
     <div className="bg-light">
-      <Header switchLanguage={handleClick} />
+      {/* <Header switchLanguage={handleClick} /> */}
 
       <Router>
         <Routes>

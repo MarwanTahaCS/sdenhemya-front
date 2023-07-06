@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import '../index.css';
 
 // imports for radio form
@@ -20,6 +21,8 @@ export default function Reception(props) {
     const [documentData, setDocumentData] = useState(props.documentData);
     const [url1, setUrl1] = useState(props.documentData.signature1);
     const [url2, setUrl2] = useState(props.documentData.signature1);
+
+    const navigate = useNavigate();
 
     function updateDocumentData(event) {
         const { value, name } = event.target;
@@ -53,7 +56,7 @@ export default function Reception(props) {
         // PDF Modification
         // modifyPdf();
 
-        
+        navigate('/success');
 
     }
 
