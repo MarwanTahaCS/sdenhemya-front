@@ -9,7 +9,7 @@ const SentPage = (props) => {
                 {props.t("Success.1")}
             </h5>
           <div class="col-lg-6 col-md-8 mx-auto">
-            {/* <img className="img-fluid p-5" src="success-35.png"></img> */}
+            <img className="img-fluid p-5" src="success-35.png"></img>
             
             <h5 class=" ">
             {props.t("Success.2")}!
